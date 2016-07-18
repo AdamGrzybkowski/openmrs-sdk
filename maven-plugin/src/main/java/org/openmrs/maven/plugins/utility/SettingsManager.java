@@ -67,9 +67,9 @@ public class SettingsManager {
         if (settings.getProfiles() == null) {
             settings.setProfiles(new ArrayList<Profile>());
         }
-        if(settings.getServer("bintray") == null) {
+        if(settings.getServer("bintray-sdk") == null) {
             ArrayList<Server> servers = new ArrayList<>();
-            servers.add(other.getServer("bintray"));
+            servers.add(other.getServer("bintray-sdk"));
             settings.setServers(servers);
         }
         // remove already created OpenMRS profile
@@ -104,7 +104,7 @@ public class SettingsManager {
                 writer.write(stream, settings);
                 stream.close();
             } catch (IOException e) {
-                throw new MojoExecutionException(e.getMessage());
+                throw new MojoExecutionException("Failed to write setting.xml", e);
             } finally {
                 IOUtils.closeQuietly(stream);
             }

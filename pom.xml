@@ -110,8 +110,8 @@
 
     <distributionManagement>
         <repository>
-            <id>bintray</id>
-            <url>https://api.bintray.com/maven/adamgrzybkowski/maven/openmrs-sdk</url>
+            <id>bintray-sdk</id>
+            <url>https://api.bintray.com/maven/adamgrzybkowski/maven/openmrs-sdk/;publish=1</url>
         </repository>
     </distributionManagement>
 
